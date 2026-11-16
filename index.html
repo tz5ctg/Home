@@ -713,10 +713,9 @@
             </svg>
             <h1>জাতীয় রাজস্ব বোর্ড (এনবিআর)</h1>
             <h2 class="department-title">আয়কর বিভাগ</h2>
-            <h2>সার্কেল-১০৭, কর অঞ্চল-৫, চট্টগ্রাম</h2>
             <div class="coverage-badge">
-                <i class="fa-solid fa-location-dot"></i>
-                এলাকা এখতিয়ার: চট্টগ্রাম সিটি কর্পোরেশন, ওয়ার্ড নং – ১৫, বাগমনিরাম
+                <i class="fa-solid fa-calculator"></i>
+                অনলাইন আয়কর ক্যালকুলেটর ও রিটার্ন সহায়তা পোর্টাল
             </div>
         </div>
     </header>
@@ -1077,14 +1076,17 @@
                 <a href="https://nbr.gov.bd" target="_blank" rel="noopener noreferrer" class="gov-link-card"><i class="fa-solid fa-building-columns"></i><span>NBR Official Website</span></a>
                 <a href="https://billpay.sonalibank.com.bd/" target="_blank" rel="noopener noreferrer" class="gov-link-card"><i class="fa-solid fa-credit-card"></i><span>Sonali Bank Bill Payment</span></a>
                 <a href="https://etaxnbr.gov.bd" target="_blank" rel="noopener noreferrer" class="gov-link-card"><i class="fa-solid fa-laptop-code"></i><span>e-Return Website</span></a>
-                <a href="https://etaxnbr.gov.bd/#/submission-verification" target="_blank" rel="noopener noreferrer" class="gov-link-card"><i class="fa-solid fa-shield-halved"></i><span>Return Verification</span></a>
+                <a href="https://etaxnbr.gov.bd/verify" target="_blank" rel="noopener noreferrer" class="gov-link-card"><i class="fa-solid fa-shield-halved"></i><span>Return Verification</span></a>
             </div>
         </section>
 
     </div>
 
     <footer>
-        <p>© সার্কেল-১০৭, কর অঞ্চল-৫, চট্টগ্রাম | জাতীয় রাজস্ব বোর্ড (এনবিআর), গণপ্রজাতন্ত্রী বাংলাদেশ সরকার</p>
+        <div style="margin-bottom: 1rem; font-size: 0.92rem; color: var(--text-main); background: #f1f5f9; display: inline-block; padding: 0.5rem 1.2rem; border-radius: 8px; border: 1px solid var(--border);">
+            <i class="fa-solid fa-location-dot" style="color: var(--primary);"></i> 
+            <strong>সৌজন্যে:</strong> সার্কেল-১০৭, কর অঞ্চল-৫, চট্টগ্রাম (এলাকা এখতিয়ার: চট্টগ্রাম সিটি কর্পোরেশন, ওয়ার্ড নং – ১৫, বাগমনিরাম)
+        </div>
     </footer>
 
     <!-- JavaScript logic -->
@@ -1268,8 +1270,9 @@
             }
 
             const taxAfterRebate = Math.max(0, grossPlusSurcharge - eligibleRebate);
-            const taxWithMinimum = income > taxFreeLimit ? Math.max(taxAfterRebate, minTax) : 0;
-            const totalPayableWithSurcharge = Math.max(0, taxWithMinimum - totalTaxPaidCredits);
+            const taxWithMinimum = income > taxFreeLimit ? Math.max(taxAfterRebail = taxAfterRebate, minTax) : 0; // handled cleanly
+            const finalTaxWithMin = income > taxFreeLimit ? Math.max(taxAfterRebate, minTax) : 0;
+            const totalPayableWithSurcharge = Math.max(0, finalTaxWithMin - totalTaxPaidCredits);
 
             // Update UI
             document.getElementById("resExemption").innerText = bnMoney(taxFreeLimit);
@@ -1286,7 +1289,7 @@
             document.getElementById("rebateOptB").innerText = bnMoney(rebateOptB);
             document.getElementById("resRebate").innerText = bnMoney(eligibleRebate);
             document.getElementById("resTaxAfterRebate").innerText = bnMoney(taxAfterRebate);
-            document.getElementById("resTaxWithMin").innerText = bnMoney(taxWithMin = taxWithMinimum);
+            document.getElementById("resTaxWithMin").innerText = bnMoney(finalTaxWithMin);
             document.getElementById("resTds").innerText = bnMoney(tdsAmount);
             document.getElementById("resAdvanceTax").innerText = bnMoney(advanceTaxAmount);
             document.getElementById("resReturnTax173").innerText = bnMoney(returnTax173Amount);
@@ -1305,7 +1308,7 @@
 
             document.getElementById("invSanchayapatra").value = 0;
             document.getElementById("invDps").value = 0;
-            document.getElementById("invLifeInsurance").value = 0;
+            document.getElementById("invLifeInsurance").value, document.getElementById("invLifeInsurance").value = 0;
             document.getElementById("invProvidentFund").value = 0;
             document.getElementById("invShareMutual").value = 0;
             document.getElementById("invWelfareGroup").value = 0;
